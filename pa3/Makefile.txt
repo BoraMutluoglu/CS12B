@@ -1,0 +1,14 @@
+#Bora Mutluoglu | bmutluog | 1564633 | cs12M | January 2, 2018 |
+#Makefile for CMPS 12B pa3 uses wildcards and pattern substitution.
+
+Dictionary: Dictionary.class
+	echo Main-class: Dictionary > Manifest
+	jar cvfm Dictionary Manifest Dictionary.class
+	rm Manifest
+	chmod +x Dictionary
+
+Dictionary.class: Dictionary.java
+	javac -Xlint Dictionary.java
+
+clean:
+	rm -f Dictionary Dictionary.class

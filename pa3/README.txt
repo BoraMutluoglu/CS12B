@@ -1,0 +1,2 @@
+Files to Turn in: README, Dictionary.java, DictionaryTest.java, DuplicateKeyException.java, KeyNotFoundException.java, DictionaryInterface.java, DictionaryClient.java, Makefile.
+No special comments to reader.
