@@ -1,0 +1,25 @@
+#Bora Mutluoglu | bmutluog | 1564633 | cs12M | March 9, 2018 |
+#Makefile for CMPS 12B lab7 DictionaryClient.java
+# Variables
+
+JARFILE    = DictionaryClient
+MAINCLASS  = DictionaryClient
+SOURCES    = Dictionary.java DictionaryInterface.java DictionaryClient.java\
+             DuplicateKeyException.java KeyNotFoundException.java
+CLASSES    = Dictionary.class DictionaryInterface.class DictionaryClient.class Dictionary\$$Node.class\
+             DuplicateKeyException.class KeyNotFoundException.class
+
+# Build Targets
+all: $(JARFILE)
+
+$(JARFILE): $(CLASSES)
+	echo Main-class: $(MAINCLASS) > Manifest
+	jar cvfm $(JARFILE) Manifest $(CLASSES)
+	rm Manifest
+	chmod +x $(JARFILE)
+
+$(CLASSES): $(SOURCES)
+	javac -Xlint $(SOURCES)  
+
+clean:
+	rm -f $(CLASSES) $(JARFILE)
