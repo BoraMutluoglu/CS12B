@@ -1,0 +1,14 @@
+#Bora Mutluoglu | bmutluog | 1564633 | cs12M | January 15, 2018 |
+#This is a Makefile that creates and archives FileReverse.class
+#into an executable jar file called FileReverse
+FileReverse: FileReverse.class
+	echo Main-class: FileReverse > Manifest
+	jar cvfm FileReverse Manifest FileReverse.class
+	rm Manifest
+	chmod +x 
+
+FileReverse.class: FileReverse.java
+	javac -Xlint FileReverse.java
+
+clean:
+	rm -f FileReverse FileReverse.class
